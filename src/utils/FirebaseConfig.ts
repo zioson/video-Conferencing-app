@@ -26,3 +26,4 @@ export const firebaseDb=getFirestore(app)
 
 
 export const userRef = collection(firebaseDb,"users")
+export const meetingsRef = collection(firebaseDb,"meetings")

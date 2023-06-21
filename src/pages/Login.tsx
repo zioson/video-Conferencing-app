@@ -14,11 +14,11 @@ import {
 import animation from '../assets/animation.gif'
 import logo from '../assets/logo.png'
 import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup } from "firebase/auth";
-import { firebaseAuth, userRef } from "../../utils/FirebaseConfig";
+import { firebaseAuth, userRef } from "../utils/FirebaseConfig";
 import { addDoc ,query,getDocs,where} from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
-import { useAppDispatch } from "../hooks";
-import { setUser } from "../slices/AuthSlices";
+import { useAppDispatch } from "../app/hooks";
+import { setUser } from "../app/slices/AuthSlices";
 import { current } from "@reduxjs/toolkit";
 const Login = () => {
 const navigate=useNavigate();

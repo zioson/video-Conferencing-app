@@ -1,14 +1,16 @@
 import React, { useEffect } from "react";
-import { useAppSelector } from "../hooks";
+import { useAppSelector } from "../app/hooks";
 import "react-toastify/dist/ReactToastify.css"; // import first
 import { ToastContainer, toast } from "react-toastify";
-import useAuth from "../../hooks/useAuth";
+import useAuth from "../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
 import { EuiCard, EuiFlexGroup, EuiFlexItem, EuiImage } from "@elastic/eui";
 import dashboard1 from '../assets/dashboard1.png'
-import dashboard2 from '../assets/dashboard2.png'
+import dashboard2 from '../pages/dashboard2.png'
 import dashboard3 from '../assets/dashboard3.png'
 import Header from "../components/Header";
+// import Header from "../app/components/Header";
+
 
 const Dashboard = () => {
   const userInfo = useAppSelector((zoom) => zoom.auth.userInfo);
@@ -55,7 +57,7 @@ const Dashboard = () => {
             icon={<EuiImage size="5rem" alt="icon" src={dashboard3} />}
             title={'Meeting'}
             description="View the meetings that are invited to you"
-            onClick={() => navigate('/create')}
+            onClick={() => navigate('/meetings')}
             paddingSize="xl"/>
           </EuiFlexItem>
         </EuiFlexGroup>

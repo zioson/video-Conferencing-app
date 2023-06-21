@@ -1,19 +1,26 @@
 import React, { useEffect, useState } from 'react'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { useAppSelector } from '../hooks';
+import { Link, NavigateFunction, useLocation, useNavigate } from 'react-router-dom'
+import { useAppSelector } from "../app/hooks";
 import { useDispatch } from 'react-redux';
 import { EuiButtonIcon, EuiFlexGroup, EuiFlexItem, EuiHeader, EuiText, EuiTextColor } from '@elastic/eui';
 import { signOut } from 'firebase/auth';
-import { firebaseAuth } from '../../utils/FirebaseConfig';
-import {changeTheme} from '../slices/AuthSlices'
-
+import { firebaseAuth } from './../utils/FirebaseConfig';
+import {changeTheme} from '../app/slices/AuthSlices'
+import {
+  getCreateMeetingBreadCrumbs,
+  getDashboardBreadCrumbs,
+  getMeetingsBreadCrumbs,
+  getMyMeetingsBreadCrumbs,
+  getOneOnOneMeetingBreadCrumbs,
+  getVideoConferenceBreadCrumbs,
+} from '../utils/breadCrumbs'
 const Header = () => {
   const navigate=useNavigate();
   const location=useLocation();
   const isDarkTheme=useAppSelector((zoom)=>zoom.auth.isDarkTheme)
 
   const userName=useAppSelector((zoom)=>zoom.auth.userInfo?.name)
-  const [breadCrumbs, setbreadCrumbs] = useState([{text:"DashBoard"}])
+  const [breadCrumbs, setBreadCrumbs] = useState([{text:"DashBoard"}])
   const [isResponsive, setIsResponsive] = useState(false)
   const dispatch=useDispatch()
   const invertTheme = () => {
@@ -25,6 +32,22 @@ const Header = () => {
 const logout=()=>{
     signOut(firebaseAuth)
   }
+  useEffect(() => {
+    const { pathname } = location;
+    if (pathname === "/") setBreadCrumbs(getDashboardBreadCrumbs(navigate));
+    else if (pathname === "/create")
+      setBreadCrumbs(getCreateMeetingBreadCrumbs(navigate));
+    else if (pathname === "/create1on1")
+      setBreadCrumbs(getOneOnOneMeetingBreadCrumbs(navigate));
+    else if (pathname === "/videoconference")
+      setBreadCrumbs(getVideoConferenceBreadCrumbs(navigate));
+    else if (pathname === "/mymeetings")
+      setBreadCrumbs(getMyMeetingsBreadCrumbs(navigate));
+    else if (pathname === "/meetings") {
+      setBreadCrumbs(getMeetingsBreadCrumbs(navigate));
+    }
+  }, [location, navigate]);
+
   const section = [
     {
       items: [
@@ -180,3 +203,4 @@ const logout=()=>{
 
 
 export default Header
+

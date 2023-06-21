@@ -9,10 +9,16 @@ import {
 import { EuiProvider, EuiThemeColorMode, EuiThemeProvider } from "@elastic/eui";
 // import "@elastic/eui/dist/eui_theme_light.css";
 // import "@elastic/eui/dist/eui_theme_dark.css";
-import Login from "./app/pages/Login";
-import Dashboard from "./app/pages/Dashboard";
+import Login from "./pages/Login";
+import Dashboard from "./pages/Dashboard";
 import { useAppDispatch, useAppSelector } from "./app/hooks";
-import ThemeSelector from "./app/components/ThemeSelector";
+import ThemeSelector from "./components/ThemeSelector";
+import CreateMeetings from "./pages/CreateMeetings";
+import OneonOnemeetings from "./pages/OneonOnemeetings";
+import VideoConference from "./pages/VideoConference";
+import MyMeetings from "./pages/MyMeetings";
+import Meeting from "./pages/Meetings";
+import JoinMeetings from "./pages/JoinMeetings";
 // import 
 
 const App = () => {
@@ -60,6 +66,14 @@ const App = () => {
 
       <Routes>
             <Route path="/login" element={<Login />} />
+            <Route path="/create" element={<CreateMeetings />} />
+            <Route path="/create1on1" element={<OneonOnemeetings />} />
+            <Route path="/videoconference" element={<VideoConference />} />
+            <Route path="/mymeetings" element={<MyMeetings />} />
+            <Route path="/meetings" element={<Meeting />} />
+            <Route path="/join/:id" element={<JoinMeetings />} />
+
+
             <Route path="/" element={<Dashboard />} />
 
             </Routes>
