@@ -5,8 +5,20 @@ This is a video calling and video conferencing application built using React, El
 ## Features
 
 - 🔒 **User Authentication**: Users can create accounts, log in, and authenticate themselves securely using Firebase authentication.
+- ![image](https://github.com/jiyanpatil07/video-Conferencing-app/assets/76421551/2d835639-82f8-40bf-ab13-d9c89abe5273)
+
 - 🎥 **1:1 Video Calls**: Users can initiate and receive 1:1 video calls with other users of the application. The calls are established using the ZegoCloud platform, which provides real-time communication capabilities.
+  ![image](https://github.com/jiyanpatil07/video-Conferencing-app/assets/76421551/e40151cd-3b4f-4cf3-a609-c5ee204e8cd3)
+![image](https://github.com/jiyanpatil07/video-Conferencing-app/assets/76421551/68ae18ae-c18d-463b-9c00-502b9e83911c)
+
+- 
 - 🎉 **Video Conferencing**: Users can create or join video conferences with multiple participants. This allows for collaborative video calls and remote meetings.
+- ![image](https://github.com/jiyanpatil07/video-Conferencing-app/assets/76421551/a8b91060-41e9-4a72-ba6c-d043ceae4281)
+- ![image](https://github.com/jiyanpatil07/video-Conferencing-app/assets/76421551/3a555041-31e3-4fce-b527-2ea7708643fc)
+- ![image](https://github.com/jiyanpatil07/video-Conferencing-app/assets/76421551/3dcf11ad-1fad-4aac-86e4-055a328fdffe)
+
+
+
 - 🖥️ **Responsive UI**: The user interface of the application is designed to be fully responsive, providing an optimal viewing experience across various devices and screen sizes.
 
 ## Technologies Used
